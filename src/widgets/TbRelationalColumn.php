@@ -114,7 +114,7 @@ class TbRelationalColumn extends TbDataColumn
 	{
 		if ($this->grid->dataProvider instanceof CActiveDataProvider) {
 			$key = $this->grid->dataProvider->keyAttribute === null ? $data->getPrimaryKey()
-				: $data->{$this->keyAttribute};
+				: $data->{$this->grid->dataProvider->keyAttribute};
 			return is_array($key) ? implode(',', $key) : $key;
 		}
 		if ($this->grid->dataProvider instanceof CArrayDataProvider || $this->grid->dataProvider instanceof CSqlDataProvider) {
